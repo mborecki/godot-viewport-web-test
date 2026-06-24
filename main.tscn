@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://osttpoytp0qg"]
+
+[ext_resource type="Script" uid="uid://k6mi68e1tqid" path="res://main.gd" id="1_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://xk5cam3a6186" path="res://subview1.tscn" id="2_lquwl"]
+[ext_resource type="PackedScene" uid="uid://dix7tetisq1hb" path="res://subview2.tscn" id="3_7mycd"]
+[ext_resource type="PackedScene" uid="uid://bns24pk6k0eyk" path="res://subview3.tscn" id="4_272bh"]
+[ext_resource type="PackedScene" uid="uid://dy7aqkxo4eedw" path="res://empty.tscn" id="5_lquwl"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_7dm0k"]
+viewport_path = NodePath("StartViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ig7tw"]
+viewport_path = NodePath("StartViewport")
+
+[node name="Node2D" type="Node2D" unique_id=1436814957]
+script = ExtResource("1_1bvp3")
+
+[node name="View1" type="Sprite2D" parent="." unique_id=1258887664]
+unique_name_in_owner = true
+position = Vector2(295, 188)
+texture = SubResource("ViewportTexture_7dm0k")
+
+[node name="View2" type="Sprite2D" parent="." unique_id=1321936490]
+unique_name_in_owner = true
+position = Vector2(962, 172)
+texture = SubResource("ViewportTexture_ig7tw")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=957522137]
+unique_name_in_owner = true
+size = Vector2i(300, 300)
+
+[node name="Subview1" parent="SubViewport" unique_id=1298707432 instance=ExtResource("2_lquwl")]
+
+[node name="SubViewport2" type="SubViewport" parent="." unique_id=1259268787]
+unique_name_in_owner = true
+size = Vector2i(300, 300)
+
+[node name="Subview2" parent="SubViewport2" unique_id=897918377 instance=ExtResource("3_7mycd")]
+
+[node name="SubViewport3" type="SubViewport" parent="." unique_id=1565683371]
+unique_name_in_owner = true
+size = Vector2i(300, 300)
+
+[node name="Subview3" parent="SubViewport3" unique_id=1764944933 instance=ExtResource("4_272bh")]
+
+[node name="SetView1" type="Button" parent="." unique_id=129790848]
+offset_left = 134.0
+offset_top = 481.0
+offset_right = 217.0
+offset_bottom = 512.0
+text = "SubView1"
+
+[node name="SetView2" type="Button" parent="." unique_id=301896429]
+offset_left = 284.0
+offset_top = 480.0
+offset_right = 367.0
+offset_bottom = 511.0
+text = "SubView2"
+
+[node name="SetView3" type="Button" parent="." unique_id=398729140]
+offset_left = 461.0
+offset_top = 485.0
+offset_right = 544.0
+offset_bottom = 516.0
+text = "SubView3"
+
+[node name="View1Label" type="Label" parent="." unique_id=59428704]
+unique_name_in_owner = true
+offset_left = 137.0
+offset_top = 29.0
+offset_right = 177.0
+offset_bottom = 52.0
+
+[node name="View2Label" type="Label" parent="." unique_id=789003861]
+unique_name_in_owner = true
+offset_left = 628.0
+offset_top = 36.0
+offset_right = 668.0
+offset_bottom = 59.0
+
+[node name="StartViewport" type="SubViewport" parent="." unique_id=930453869]
+size = Vector2i(300, 300)
+
+[node name="Empty" parent="StartViewport" unique_id=2126749862 instance=ExtResource("5_lquwl")]
+
+[connection signal="pressed" from="SetView1" to="." method="_on_set_view_1_pressed"]
+[connection signal="pressed" from="SetView2" to="." method="_on_set_view_2_pressed"]
+[connection signal="button_down" from="SetView3" to="." method="_on_set_view_3_button_down"]

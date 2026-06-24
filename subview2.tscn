@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dix7tetisq1hb"]
+
+[ext_resource type="Texture2D" uid="uid://d1pj445unnv1h" path="res://icon.svg" id="1_4xi2e"]
+
+[sub_resource type="GDScript" id="GDScript_lquwl"]
+script/source = "extends Sprite2D
+
+func _process(delta: float) -> void:
+	rotate(delta * .1);
+"
+
+[node name="Subview2" type="Node2D" unique_id=1298707432]
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1771459581]
+position = Vector2(93, 94)
+texture = ExtResource("1_4xi2e")
+
+[node name="Icon2" type="Sprite2D" parent="." unique_id=2016040081]
+position = Vector2(124, 125)
+texture = ExtResource("1_4xi2e")
+script = SubResource("GDScript_lquwl")

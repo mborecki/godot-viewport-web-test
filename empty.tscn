@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dy7aqkxo4eedw"]
+
+[node name="Empty" type="Node2D" unique_id=2126749862]
+
+[node name="Label" type="Label" parent="." unique_id=321603998]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 50
+text = "EMPTY"
