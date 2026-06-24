@@ -1,5 +1,7 @@
 This is demo project for GototEngine ViewportTexture bug in Web Export.
 
+LIVE demo: https://mborecki.github.io/godot-viewport-web-test/
+
 ## Step to reproduce
 
 Correct behavior (in Debug and in Win Export):
